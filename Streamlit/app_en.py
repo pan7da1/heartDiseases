@@ -9,9 +9,14 @@ MODEL_NAME = 'model_cardio_04_03_23.pcl'
 # definition load-model function 
 def load():
     model_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'models', MODEL_NAME))
-    with open(model_path, 'rb') as fid:
-        s = pickle.load(fid)
-        return s
+    try:
+        with open(model_path, 'rb') as fid:
+            s = pickle.load(fid)
+            return s
+    except FileNotFoundError:
+        st.error(f"Файл модели не найден по пути {model_path}")
+        # Вы можете вернуть модель по умолчанию или обработать ошибку другим способом.
+        return None
 
 # function define arterial pressure level
 def ag_step(ap_sis):
