@@ -1,5 +1,5 @@
 import streamlit as st
-import pickle.load
+from pickle import load
 import numpy as np
 import os
 
