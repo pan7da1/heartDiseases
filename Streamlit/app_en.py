@@ -1,4 +1,3 @@
-!pip install xgboost
 import streamlit as st
 import pickle.load
 import numpy as np
