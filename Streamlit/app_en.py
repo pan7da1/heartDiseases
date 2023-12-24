@@ -1,5 +1,6 @@
+!pip install xgboost
 import streamlit as st
-import pickle
+import pickle.load
 import numpy as np
 import os
 
@@ -9,7 +10,7 @@ MODEL_NAME = 'model_cardio_04_03_23.pcl'
 # definition load-model function 
 def load():
     with open(os.path.dirname(__file__) + f'/models/{MODEL_NAME}', 'rb') as fid:
-        return pickle.load(fid)
+        return load(fid)
 
 # function define arterial pressure level
 def ag_step(ap_sis):
