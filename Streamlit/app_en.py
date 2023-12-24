@@ -8,7 +8,8 @@ MODEL_NAME = 'model_cardio_04_03_23.pcl'
 
 # definition load-model function 
 def load():
-    with open(os.path.dirname(__file__) + f'/models/{MODEL_NAME}', 'rb') as fid:
+    model_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'models', MODEL_NAME))
+    with open(model_path, 'rb') as fid:
         s = pickle.load(fid)
         return s
 
