@@ -9,7 +9,8 @@ MODEL_NAME = 'model_cardio_04_03_23.pcl'
 # definition load-model function 
 def load():
     with open(os.path.dirname(__file__) + f'/models/{MODEL_NAME}', 'rb') as fid:
-        return fid
+	model = load(fid)
+        return model
 
 # function define arterial pressure level
 def ag_step(ap_sis):
